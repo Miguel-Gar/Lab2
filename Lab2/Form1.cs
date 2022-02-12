@@ -19,27 +19,19 @@ namespace Lab2
 
         private void buttonbuscar_Click(object sender, EventArgs e)
         {
-            string nombre = "";
-            string nombre2 = "";
-            comboBox1.Text =nombre;
-            webBrowser1.Navigate(new Uri(comboBox1.SelectedItem.ToString()));
-            for (int x = 1; x < nombre.Length; x++)
-            {
+            // cambio al navegar 
+            string uri = "";
+            if (comboBox1.Text != null)
+                uri = comboBox1.Text;
+            else if (comboBox1.SelectedItem != null)
+                uri = comboBox1.SelectedItem.ToString(); 
 
-                //si la posición anterior a la letra es un espacio en blanco
-                //convertirla a mayúscula
-                //sino solo copiarla
-                if (nombre[x - 1] == ' ')
-                {
-                    if (char.IsLetter(nombre[x]) || char.IsWhiteSpace(nombre[x]))
-                        nombre2 += char.ToUpper(nombre[x]);
-                }
-                else
-                  if (char.IsLetter(nombre[x]) || char.IsWhiteSpace(nombre[x]))
-                    nombre2 += nombre[x];
+            if (!uri.Contains("."))
+                uri = "https://www.google.com/search?q=" + uri;
 
-            }
-
+            if (!uri.Contains("https://"))
+                uri = "https://" + uri;
+            webBrowser1.Navigate(new Uri(uri));
         }
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
