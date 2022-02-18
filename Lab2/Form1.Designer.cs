@@ -54,9 +54,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "https://calendar.google.com/calendar/u/0/r",
-            "https://www.mesoamericana.edu.gt/",
-            "https://vm.tiktok.com/ZML22tfjF/"});
+            "https://calendar.google.com/calendar/u/0/r"});
             this.comboBox1.Location = new System.Drawing.Point(12, 27);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(766, 21);
@@ -85,6 +83,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(882, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // inicioToolStripMenuItem
             // 

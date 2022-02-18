@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Lab2
 {
@@ -16,7 +17,14 @@ namespace Lab2
         {
             InitializeComponent();
         }
-
+        private void Guardar(string fileName, string texto)
+        {
+            //guadar en combo box temporalmente
+            FileStream stream = new FileStream(fileName, FileMode.Append, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(stream);
+            writer.WriteLine(texto);
+            writer.Close();
+        }
         private void buttonbuscar_Click(object sender, EventArgs e)
         {
             // cambio al navegar 
@@ -31,7 +39,23 @@ namespace Lab2
 
             if (!uri.Contains("https://"))
                 uri = "https://" + uri;
+
             webBrowser1.Navigate(new Uri(uri));
+
+            int mismoD = 0;
+            for (int i = 0; i<comboBox1.Items.Count; i++)
+            {
+                if (uri == comboBox1.Items[i].ToString())
+                {
+                    mismoD++;
+                }
+                if (mismoD==0)
+                {
+                    comboBox1.Items.Add(uri);
+                    Guardar("H.txt", uri);
+                }
+            }
+
         }
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -68,11 +92,28 @@ namespace Lab2
         {
  
         }
+        private void leer(string fileName)
+        {
+            FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(stream);
 
+            while (reader.Peek() > -1)
+            {
+                comboBox1.Items.Add(reader.ReadLine());
+            }
+
+            reader.Close();
+        }
+        
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 0;
-            webBrowser1.GoHome();
+            leer("H.txt");
+            //webBrowser1.GoHome();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
