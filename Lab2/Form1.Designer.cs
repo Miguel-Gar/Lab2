@@ -36,6 +36,13 @@
             this.haciaAtrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.haciaAdelanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historialToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.hIstorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ordenarPorFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenarPorVecesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,8 +60,6 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "https://calendar.google.com/calendar/u/0/r"});
             this.comboBox1.Location = new System.Drawing.Point(12, 27);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(766, 21);
@@ -77,7 +82,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inicioToolStripMenuItem});
+            this.inicioToolStripMenuItem,
+            this.historialToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(882, 24);
@@ -99,29 +105,81 @@
             // haciaAtrasToolStripMenuItem
             // 
             this.haciaAtrasToolStripMenuItem.Name = "haciaAtrasToolStripMenuItem";
-            this.haciaAtrasToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.haciaAtrasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.haciaAtrasToolStripMenuItem.Text = "Inicio";
             this.haciaAtrasToolStripMenuItem.Click += new System.EventHandler(this.haciaAtrasToolStripMenuItem_Click);
             // 
             // haciaAdelanteToolStripMenuItem
             // 
             this.haciaAdelanteToolStripMenuItem.Name = "haciaAdelanteToolStripMenuItem";
-            this.haciaAdelanteToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.haciaAdelanteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.haciaAdelanteToolStripMenuItem.Text = "Hacia Atras";
             this.haciaAdelanteToolStripMenuItem.Click += new System.EventHandler(this.haciaAdelanteToolStripMenuItem_Click);
             // 
             // iToolStripMenuItem
             // 
             this.iToolStripMenuItem.Name = "iToolStripMenuItem";
-            this.iToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.iToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.iToolStripMenuItem.Text = "Hacia Adelante";
             this.iToolStripMenuItem.Click += new System.EventHandler(this.iToolStripMenuItem_Click);
+            // 
+            // historialToolStripMenuItem1
+            // 
+            this.historialToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator1,
+            this.ordenarPorFechaToolStripMenuItem,
+            this.ordenarPorVecesToolStripMenuItem,
+            this.eliminarToolStripMenuItem});
+            this.historialToolStripMenuItem1.Name = "historialToolStripMenuItem1";
+            this.historialToolStripMenuItem1.Size = new System.Drawing.Size(63, 20);
+            this.historialToolStripMenuItem1.Text = "Historial";
+            this.historialToolStripMenuItem1.Click += new System.EventHandler(this.historialToolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // hIstorialToolStripMenuItem
+            // 
+            this.hIstorialToolStripMenuItem.Name = "hIstorialToolStripMenuItem";
+            this.hIstorialToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            this.hIstorialToolStripMenuItem.Text = "HIstorial";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(146, 4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 9;
+            // 
+            // ordenarPorFechaToolStripMenuItem
+            // 
+            this.ordenarPorFechaToolStripMenuItem.Name = "ordenarPorFechaToolStripMenuItem";
+            this.ordenarPorFechaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ordenarPorFechaToolStripMenuItem.Text = "Ordenar por fecha";
+            this.ordenarPorFechaToolStripMenuItem.Click += new System.EventHandler(this.ordenarPorFechaToolStripMenuItem_Click);
+            // 
+            // ordenarPorVecesToolStripMenuItem
+            // 
+            this.ordenarPorVecesToolStripMenuItem.Name = "ordenarPorVecesToolStripMenuItem";
+            this.ordenarPorVecesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ordenarPorVecesToolStripMenuItem.Text = "Ordenar por veces";
+            this.ordenarPorVecesToolStripMenuItem.Click += new System.EventHandler(this.ordenarPorVecesToolStripMenuItem_Click);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarToolStripMenuItem.Text = "eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 481);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.buttonbuscar);
@@ -146,6 +204,13 @@
         private System.Windows.Forms.ToolStripMenuItem haciaAtrasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem haciaAdelanteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hIstorialToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historialToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ToolStripMenuItem ordenarPorFechaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordenarPorVecesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
     }
 }
 
